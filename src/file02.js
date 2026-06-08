@@ -16,31 +16,20 @@ const frameworks = [
   "Solid|5 de julio de 2021|250,000|80%"
 ];
 
-/**
- * TO-DO:
- *
- * 1. Itere el arreglo frameworks.
- *    Referencia: https://javascript.info/array#loops
- * 
- * 2. En cada iteración:
- *
- *    Tome una cadena del arreglo y divídala en partes usando el separador "|".
- *    Referencia: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
- *   
- *    Extraiga los valores: nombre del framework, fecha de lanzamiento, número de usuarios y porcentaje de popularidad.
- *    Referencia: https://javascript.info/destructuring-assignment   
- * 
- *    Cree un objeto frameworkObj con las siguientes propiedades:
- *    - frameworkName
- *    - releaseDate
- *    - usersName
- *    - popularityPercentage
- *    Referencia: https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Working_with_Objects
- * 
- *    Asegúrese de eliminar los espacios en blanco alrededor de cada valor usando `.trim()`.
- *    Referencia: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/trim
- * 
- *    LlamE a la función addRow pasando el objeto frameworkObj y el ID del cuerpo de la tabla "data-frameworks",
- *    para agregar una nueva fila con estos datos al cuerpo de la tabla HTML.
- */
+for (const framework of frameworks) {
+  const [
+    frameworkName,
+    releaseDate,
+    usersName,
+    popularityPercentage
+  ] = framework.split("|");
 
+  const frameworkObj = {
+    frameworkName: frameworkName.trim(),
+    releaseDate: releaseDate.trim(),
+    usersName: usersName.trim(),
+    popularityPercentage: popularityPercentage.trim()
+  };
+
+  addRow(frameworkObj, "data-frameworks");
+}
