@@ -16,13 +16,8 @@ const frameworks = [
   "Solid|5 de julio de 2021|250,000|80%"
 ];
 
-for (const framework of frameworks) {
-  const [
-    frameworkName,
-    releaseDate,
-    usersName,
-    popularityPercentage
-  ] = framework.split("|");
+for (let i = 0; i < frameworks.length; i++) {
+  const [frameworkName, releaseDate, usersName, popularityPercentage] = frameworks[i].split("|");
 
   const frameworkObj = {
     frameworkName: frameworkName.trim(),
